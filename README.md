@@ -73,7 +73,7 @@ menghisap energi dari manusia.
 ```text
 1. Menekan button play untuk memulai game
 2. Menekan mouse untuk melompat
-3. Tekan APAAN untuk menghisab jiwa manusia
+3. Tekan SPACE untuk menghisab jiwa manusia
 4. 
 
 ```
