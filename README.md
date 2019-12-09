@@ -58,24 +58,13 @@ menghisap energi dari manusia.
 
 ```
 
-## Rules
-
-```text
-1. Permainan ini bersifat single player
-2. Doll harus menyerang manusia agar dapat bertahan hidup
-3. Energi yang dimiliki Doll akan terus berkurang apabila tidak menghisap energi manusia
-4. Game ini bersifat endless
-
-```
-
-## Cara pakai aplikasi
+## Cara pakai _game_ (_How to play_)
 
 ```text
 1. Menekan button play untuk memulai game
 2. Menekan mouse untuk melompat
 3. Tekan SPACE untuk menghisab jiwa manusia
-4. 
-
+4. Saat game over, klik pada mouse untuk restart
 ```
 
 ## Teknologi yang digunakan
