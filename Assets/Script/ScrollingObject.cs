@@ -9,12 +9,12 @@ public class ScrollingObject : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
+        rb2d.velocity = new Vector2(GameControl.instance.scrollSpeed, 0);
     }
 
     void Update()
     {
-        if (GameController.instance.gameOver == true)
+        if (GameControl.instance.gameOver == true)
         {
             rb2d.velocity = Vector2.zero;
         }

@@ -8,7 +8,9 @@ public class Girl : MonoBehaviour
     private Animator anim;
     private bool isDead = false;            //Has the player collided with a wall?
     private Rigidbody2D rb2d;                //Holds a reference to the Rigidbody2D component of the bird.
-    private bool slash = false;
+    public bool slash = false;
+    public float fallMultiplier = 2.5f;
+
 
     void Start()
     {
@@ -20,37 +22,38 @@ public class Girl : MonoBehaviour
     void Update()
     {
         //Don't allow control if the bird has died.
-        if (isDead != false)
-        {
-            if (Input.GetMouseButtonDown(1))
+        if (isDead == false)
+        {   
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+            if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Girl_Jump");
-                rb2d.velocity = Vector2.zero;
-                rb2d.AddForce(new Vector2(0, upForce));
+                rb2d.velocity = (new Vector2(rb2d.velocity.x, upForce));
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow)){
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
 				slash = true;
 				anim.SetTrigger("Girl_Slashing");
 			}
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-		if(collision.gameObject.name == "HumanGirl" || collision.gameObject.name == "HumanBoy")
-		{
-			if(slash == false)
-			{
-				isDead = true;
-				anim.SetTrigger("Girl_Die");
-				GameController.instance.GirlDied();
-			}
-			else
-			{	
-				ScoreScript.scoreVal++;
-				Destroy(collision.gameObject);
-				slash = false;
-			}
-		}
+    void OnCollisionEnter2D(Collision2D trig)
+    {       
+        if(trig.gameObject.CompareTag("human"))
+        {
+            if(slash == true){
+                Destroy(trig.gameObject);
+                GameControl.instance.GirlScored();
+                slash = false;
+            }
+            else {
+                rb2d.velocity = Vector2.zero;
+                isDead = true;
+                anim.SetTrigger("Girl_Die");
+                GameControl.instance.GirlDied();
+            }
+        }
     }
 }
