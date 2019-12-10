@@ -77,7 +77,7 @@ menghisap energi dari manusia.
 1. Unity 2019.2.12f1 : platform utama yang digunakan untuk mengolah semua komponen game
 2. Visual Studio Code : untuk membuat script game
 3. Adobe Illustrator : untuk mengambil bagian aset yang dibutuhkan untuk game
-4. Idem : untuk membuat script game
+4. Github : untuk platform kolaborasi
 
 ```
 
