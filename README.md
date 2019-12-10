@@ -83,3 +83,6 @@ menghisap energi dari manusia.
 
 ## Link Youtube
 https://www.youtube.com/watch?v=m7SzAu80S1g
+
+## Link Slide
+https://docs.google.com/presentation/d/177ZzZVf6z939qKtFN1IDu-FJxEHZ8V5fiYidZjPnZlo/edit#slide=id.g4dc676206e_0_1218
