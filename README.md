@@ -14,9 +14,9 @@
 
 ## Nama Pengembang
 
-1. Zaki Muttaqin		G64170012
-2. Dina Fadila			G64170021
-3. Dhana Dhira			G64170075	
+1. Zaki Muttaqin (G64170012) : Game Programmer(Main), Game Designer
+2. Dina Fadila (G64170021) : Game Artist(Main), Designer, Programmer
+3. Dhana Dhira (G64170075) : Game Programmer(Main), Game Designer
 
 ## Deskripsi Game
 
@@ -58,20 +58,25 @@ menghisap energi dari manusia.
 
 ```
 
-## Cara pakai _game_ (_How to play_)
-
-```text
+## Cara pakai aplikasi
 1. Menekan button play untuk memulai game
-2. Menekan mouse untuk melompat
-3. Tekan SPACE untuk menghisab jiwa manusia
-4. Saat game over, klik pada mouse untuk restart
-```
+![Gambar Memotret](https://github.com/dinafadila/Grafkom/blob/master/GAME%201.png)
+2. Klik mouse kiri untuk melompat
+![Gambar Memotret](https://github.com/dinafadila/Grafkom/blob/master/LOMPAT.png)
+3. Tekan spasi untuk menghisab jiwa manusia
+![Gambar Memotret](https://github.com/dinafadila/Grafkom/blob/master/HISAB.png)
+4. Jika manabar habis, maka permainan berakhir
+![Gambar Memotret](https://github.com/dinafadila/Grafkom/blob/master/GAM%20OVER.png)
+5. Jika player mengenai manusia maka permainan berakhir
+![Gambar Memotret](https://github.com/dinafadila/Grafkom/blob/master/GAME%20OVER.png)
+
 
 ## Teknologi yang digunakan
 
 ```text
-1. Unity
-2. Visual Studio Code
+1. Unity 2019.2.12f1 : platform utama yang digunakan untuk mengolah semua komponen game
+2. Visual Studio Code : untuk membuat script game
+3. Adobe Illustrator : untuk mengambil bagian aset yang dibutuhkan untuk game
+4. Idem : untuk membuat script game
 
 ```
-
