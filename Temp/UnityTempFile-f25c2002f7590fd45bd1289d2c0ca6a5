@@ -295,7 +295,6 @@ Assets\Script\backgroundLoop.cs
 Assets\Script\EnemyPool.cs
 Assets\Script\GameControl.cs
 Assets\Script\Girl.cs
-Assets\Script\ManaBar.cs
 Assets\Script\NewRepBG.cs
 Assets\Script\Patrol_AI.cs
 Assets\Script\RepeatingBackground.cs

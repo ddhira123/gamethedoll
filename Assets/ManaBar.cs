@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour
 {
+    public Girl G;
     public Image barImg;
     private float MANA_MAX;
     private float manaAmt;
@@ -14,6 +15,7 @@ public class ManaBar : MonoBehaviour
 
     void Awake()
     {
+        G = GameObject.FindObjectOfType(typeof(Girl)) as Girl;
         barImg = GetComponent<Image> ();
         barImg.fillAmount = 1f;
         MANA_MAX = 100f;
@@ -39,7 +41,7 @@ public class ManaBar : MonoBehaviour
             }
             else
             {
-                GameControl.instance.GirlDied();
+                G.GirlDie();
             }
         }
     }

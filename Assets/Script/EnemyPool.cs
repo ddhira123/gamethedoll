@@ -8,12 +8,11 @@ public class EnemyPool : MonoBehaviour
     public GameObject humanPrefab;
     public GameObject opt1;
     public GameObject opt2;
-    public float spawnRate = 4f;
 
     public GameObject[] humans;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
     private float timeSinceLastSpawn;
-    private float spawnXPos = 35f;
+    private float spawnXPos = 25f;
     private int currentObj = 0;
     private int rng;
 
@@ -39,7 +38,7 @@ public class EnemyPool : MonoBehaviour
     {
         timeSinceLastSpawn += Time.deltaTime;
 
-        if(GameControl.instance.gameOver == false && timeSinceLastSpawn >= spawnRate)
+        if(GameControl.instance.gameOver == false && timeSinceLastSpawn >= 3f)
         {
             timeSinceLastSpawn = 0f;
             humans[currentObj].transform.position = new Vector2(spawnXPos, 0f);

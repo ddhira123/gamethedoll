@@ -187,7 +187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49, y: 0}
+  m_AnchoredPosition: {x: -19, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56102758
@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63977e9373f794e41bbc0d8779826c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  G: {fileID: 0}
   barImg: {fileID: 153818192}
 --- !u!1 &425827333
 GameObject:
@@ -1321,7 +1322,6 @@ MonoBehaviour:
   humanPrefab: {fileID: 0}
   opt1: {fileID: 5517573269522919588, guid: b8ffeed3028070246b409a0046573814, type: 3}
   opt2: {fileID: 5217315855256118325, guid: 82080ef688c63f849b36fdfc24288b10, type: 3}
-  spawnRate: 2
   humans: []
 --- !u!1 &1741711479
 GameObject:

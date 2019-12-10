@@ -25,7 +25,7 @@ public class Girl : MonoBehaviour
         if (isDead == false)
         {   
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && rb2d.velocity.x == 0f)
             {
                 anim.SetTrigger("Girl_Jump");
                 rb2d.velocity = (new Vector2(rb2d.velocity.x, upForce));
@@ -49,11 +49,15 @@ public class Girl : MonoBehaviour
                 slash = false;
             }
             else {
-                rb2d.velocity = Vector2.zero;
-                isDead = true;
-                anim.SetTrigger("Girl_Die");
-                GameControl.instance.GirlDied();
+                GirlDie();
             }
         }
+    }
+
+    public void GirlDie(){
+        rb2d.velocity = Vector2.zero;
+        isDead = true;
+        anim.SetTrigger("Girl_Die");
+        GameControl.instance.GirlDied();
     }
 }

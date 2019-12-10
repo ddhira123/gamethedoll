@@ -10,17 +10,19 @@ public class GameControl : MonoBehaviour
     public Text scoreText;                        //A reference to the UI text component that displays the player's score.
     public GameObject gameOvertext;                //A reference to the object that displays the text which appears when the player dies.
 
-    // /* Spawner */
-    // private float delaySpawn = 0.0005f;
-    // private float spawnTime = 0.0f;
+    public float spawnTime = 0.0f;
     // public GameObject humanGirl;                   // A reference to the girl
     // public GameObject humanBoy;                   // A reference to the boy
-    // public Camera cam;
+    public Camera cam;
 
     public int score = 0;                        //The player's score.
     public bool gameOver = false;                //Is the game over?
     public float scrollSpeed = -1.5f;
 
+    public GameObject humanPrefab;
+    public GameObject opt1;
+    public GameObject opt2;
+    public int spawnx;
 
     void Awake()
     {   
@@ -37,23 +39,30 @@ public class GameControl : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        // if (spawnTime < Time.deltaTime)
-        // {
-        //     // Waktu Spawn 
-        //     spawnTime = Time.deltaTime + delaySpawn;
+        if(gameOver == false){
+            spawnTime += Time.deltaTime;
+            if (spawnTime >= 3f)
+            {
+                // Waktu Spawn 
+                // Log
+                // Debug.Log("Spawn Object" + Time.deltaTime.ToString());
+                // Fugsi Spawn
+                Random.seed = System.DateTime.Now.Millisecond;
+                int spTime = (int)(spawnTime) + Random.Range(1,10);
+                if(spTime % 2 == 0){
+                    humanPrefab = opt1;
+                    spawnx = 30;
+                }
+                else{
+                    humanPrefab = opt2;
+                    spawnx = 10;
+                }
+                Spawn();
+                Debug.Log(spTime);
+            }
 
-        //     // Log
-        //     Debug.Log("Spawn Girl Object" + Time.deltaTime.ToString());
-        //     // Fugsi Spawn
-        //     int spTime = (int)(spawnTime);
-        //     if(spTime % 2 == 0)
-        //         SpawnGirl();
-        //     else
-        //         SpawnBoy();
-        // }
-
-        // Debug.Log("Time in game : " + Time.deltaTime.ToString());
-
+            // Debug.Log("Time in game : " + Time.deltaTime.ToString());
+        }
     }
 
     public void GirlScored()
@@ -73,21 +82,12 @@ public class GameControl : MonoBehaviour
         gameOver = true;
     }
 
-    // void SpawnGirl()
-    // {
-    //     // Buat Vector posisi Spawn
-    //     Vector3 girlPos = new Vector3(cam.gameObject.transform.position.x + 10.0f, -1.5f, 0.0f);
-
-    //     // Initiate Object supaya keluar di game
-    //     Instantiate(humanGirl, girlPos, Quaternion.identity);
-    // }
-
-    // void SpawnBoy()
-    // {
-    //     // Buat Vector posisi Spawn
-    //     Vector3 boyPos = new Vector3(cam.gameObject.transform.position.x + 10.0f, -1.5f, 0.0f);
-
-    //     // Initiate Object supaya keluar di game
-    //     Instantiate(humanBoy, boyPos, Quaternion.identity);
-    // }
+    void Spawn()
+    {
+        // Buat Vector posisi Spawn
+        Vector2 spawnPos = new Vector2(cam.gameObject.transform.position.x + spawnx, 0.07f);
+        Instantiate(humanPrefab, spawnPos, Quaternion.identity);
+        // Debug.Log(spawnPos+" "+spawnTime);
+        spawnTime = 0f;
+    }
 }

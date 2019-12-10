@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patrol_AI : MonoBehaviour {
 
-	public float speed;
+	public float speed = 0.1f;
 	public bool movingRight;
 
 	void Update(){
