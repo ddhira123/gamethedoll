@@ -10,19 +10,22 @@ public class GameControl : MonoBehaviour
     public Text scoreText;                        //A reference to the UI text component that displays the player's score.
     public GameObject gameOvertext;                //A reference to the object that displays the text which appears when the player dies.
 
-    public float spawnTime = 0.0f;
+    private float spawnTime = 0.5f;
     // public GameObject humanGirl;                   // A reference to the girl
     // public GameObject humanBoy;                   // A reference to the boy
     public Camera cam;
 
     public int score = 0;                        //The player's score.
     public bool gameOver = false;                //Is the game over?
-    public float scrollSpeed = -1.5f;
+    public float scrollSpeed = -3.5f;
 
     public GameObject humanPrefab;
     public GameObject opt1;
     public GameObject opt2;
-    public int spawnx;
+    private int spawnx;
+    public int cnt;
+    private int level = 0;
+    private float spawnRate = 3f;
 
     void Awake()
     {   
@@ -40,25 +43,30 @@ public class GameControl : MonoBehaviour
         }
 
         if(gameOver == false){
+            if(score % 5==0 && score != 0)
+            {
+                level++;
+                spawnRate = 3f + score*0.006f;
+                scrollSpeed = -3.5f - score*0.001f;
+                spawnTime = 0.0f;
+            }
             spawnTime += Time.deltaTime;
-            if (spawnTime >= 3f)
+            if (spawnTime >= spawnRate)
             {
                 // Waktu Spawn 
                 // Log
                 // Debug.Log("Spawn Object" + Time.deltaTime.ToString());
                 // Fugsi Spawn
-                Random.seed = System.DateTime.Now.Millisecond;
-                int spTime = (int)(spawnTime) + Random.Range(1,10);
-                if(spTime % 2 == 0){
+                cnt = 1;
+                if(cnt % 2 == 0){
                     humanPrefab = opt1;
                     spawnx = 30;
                 }
                 else{
                     humanPrefab = opt2;
-                    spawnx = 10;
+                    spawnx = 1;
                 }
                 Spawn();
-                Debug.Log(spTime);
             }
 
             // Debug.Log("Time in game : " + Time.deltaTime.ToString());
