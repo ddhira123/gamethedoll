@@ -56,10 +56,8 @@
      <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\ManaBar.cs" />
      <Compile Include="Assets\Script\backgroundLoop.cs" />
-     <Compile Include="Assets\Script\EnemyPool.cs" />
      <Compile Include="Assets\Script\GameControl.cs" />
      <Compile Include="Assets\Script\Girl.cs" />
-     <Compile Include="Assets\Script\NewRepBG.cs" />
      <Compile Include="Assets\Script\Patrol_AI.cs" />
      <Compile Include="Assets\Script\RepeatingBackground.cs" />
      <Compile Include="Assets\Script\ScoreScript.cs" />

@@ -9,14 +9,10 @@ public class EnemyPool : MonoBehaviour
     public GameObject opt1;
     public GameObject opt2;
 
-    public float spawnRate = 4f;
-    public float humanMin = -1f;
-    public float humanMax = 3.5f;
-
     public GameObject[] humans;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
     private float timeSinceLastSpawn;
-    private float spawnXPos = 30f;
+    private float spawnXPos = 25f;
     private int currentObj = 0;
     private int rng;
 
@@ -25,15 +21,13 @@ public class EnemyPool : MonoBehaviour
     {
         humans = new GameObject[humanPoolSize];
         for(int i=0; i < humanPoolSize; i++){
-            rng = Random.Range(0,i);
+            rng = Random.Range(0,i) + i;
             if(rng % 2 == 0){
                 humanPrefab = opt1;
-                objectPoolPosition = new Vector2(-15f, -25f);
             }
             else
             {
                 humanPrefab = opt2;
-                objectPoolPosition = new Vector2(-15f, 0.5f);
             }
             humans[i] = (GameObject)Instantiate(humanPrefab, objectPoolPosition, Quaternion.identity);
         }
@@ -44,7 +38,7 @@ public class EnemyPool : MonoBehaviour
     {
         timeSinceLastSpawn += Time.deltaTime;
 
-        if(GameControl.instance.gameOver == false && timeSinceLastSpawn >= spawnRate)
+        if(GameControl.instance.gameOver == false && timeSinceLastSpawn >= 3f)
         {
             timeSinceLastSpawn = 0f;
             humans[currentObj].transform.position = new Vector2(spawnXPos, 0f);

@@ -25,6 +25,9 @@ public class Girl : MonoBehaviour
         if (isDead == false)
         {   
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+            while(GameControl.instance.score % 5 == 0 || rb2d.position.x < -3.28f){
+                rb2d.velocity = new Vector2(0.5f, rb2d.velocity.y);
+            }
             if (Input.GetMouseButtonDown(0) && rb2d.velocity.x == 0f)
             {
                 anim.SetTrigger("Girl_Jump");
@@ -33,8 +36,8 @@ public class Girl : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetTrigger("Girl_Slashing");
 				slash = true;
-				anim.SetTrigger("Girl_Slashing");
 			}
         }
     }
