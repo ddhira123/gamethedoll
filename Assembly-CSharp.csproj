@@ -55,13 +55,13 @@
   <ItemGroup>
      <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\ManaBar.cs" />
-     <Compile Include="Assets\Script\backgroundLoop.cs" />
      <Compile Include="Assets\Script\GameControl.cs" />
      <Compile Include="Assets\Script\Girl.cs" />
      <Compile Include="Assets\Script\Patrol_AI.cs" />
      <Compile Include="Assets\Script\RepeatingBackground.cs" />
      <Compile Include="Assets\Script\ScoreScript.cs" />
      <Compile Include="Assets\Script\ScrollingObject.cs" />
+     <Compile Include="Assets\Script\SoundManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Hp/Desktop/The Doll/P Grafkom/THE DOLL/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

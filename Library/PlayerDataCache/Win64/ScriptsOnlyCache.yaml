@@ -9,7 +9,7 @@ ScriptsOnlyBuild:
     - RepeatingBackground
     - ScoreScript
     - ScrollingObject
-    - backgroundLoop
+    - SoundManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -58,14 +58,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9662}
     - Class: 114
       Script: {instanceID: 9678}
     - Class: 114
@@ -79,23 +81,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10120}
     - Class: 114
-      Script: {instanceID: 10218}
+      Script: {instanceID: 10216}
     - Class: 114
-      Script: {instanceID: 10252}
+      Script: {instanceID: 10250}
     - Class: 114
-      Script: {instanceID: 10286}
+      Script: {instanceID: 10284}
     - Class: 114
-      Script: {instanceID: 10290}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10402}
+      Script: {instanceID: 10434}
     - Class: 114
-      Script: {instanceID: 10438}
+      Script: {instanceID: 11042}
     - Class: 114
-      Script: {instanceID: 11046}
+      Script: {instanceID: 11140}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11512}
     - Class: 114
-      Script: {instanceID: 11516}
+      Script: {instanceID: 17052}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -140,15 +142,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9882}
     - Class: 114
-      Script: {instanceID: 10290}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10660}
+      Script: {instanceID: 10656}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11140}
+    - Class: 114
+      Script: {instanceID: 11508}
     - Class: 114
       Script: {instanceID: 11512}
-    - Class: 114
-      Script: {instanceID: 11516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,12 +166,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: a36879d685cbfcc38742d0df86968ba9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: backgroundLoop
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -346,7 +342,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 7e4e399281efb8b3357a47e4d7959ac9
+      Hash: 333472f0fd450bcc82641670caeae90a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameControl
@@ -632,6 +628,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: e8ec35bc4560025673a4e835ab96dfff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

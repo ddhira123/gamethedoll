@@ -10,13 +10,16 @@ public class Girl : MonoBehaviour
     private Rigidbody2D rb2d;                //Holds a reference to the Rigidbody2D component of the bird.
     public bool slash = false;
     public float fallMultiplier = 2.5f;
+    private float startPos;
+    SoundManager S;
 
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-		
+		startPos = rb2d.position.x;
+        S = GameObject.FindObjectOfType(typeof(SoundManager)) as SoundManager;
     }
 
     void Update()
@@ -25,18 +28,21 @@ public class Girl : MonoBehaviour
         if (isDead == false)
         {   
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-            while(GameControl.instance.score % 5 == 0 || rb2d.position.x < -3.28f){
+            if(GameControl.instance.score % 5 == 0 || rb2d.position.x < startPos){
                 rb2d.velocity = new Vector2(0.5f, rb2d.velocity.y);
             }
             if (Input.GetMouseButtonDown(0) && rb2d.velocity.x == 0f)
             {
                 anim.SetTrigger("Girl_Jump");
+                S.PlaySound(1);
                 rb2d.velocity = (new Vector2(rb2d.velocity.x, upForce));
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetTrigger("Girl_Slashing");
+                S.PlaySound(2);
+                GameControl.instance.girlBehave = 2;
 				slash = true;
 			}
         }

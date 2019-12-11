@@ -27,6 +27,14 @@ public class GameControl : MonoBehaviour
     private int level = 0;
     private float spawnRate = 3f;
 
+    /*audio
+    1 = jump
+    2 = slash
+    0 = otherwise
+    */
+    public int girlBehave = 0;
+
+
     void Awake()
     {   
         if (instance == null)
